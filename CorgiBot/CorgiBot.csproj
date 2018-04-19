@@ -132,6 +132,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\IntroduceYourself.cs" />
+    <Compile Include="Modules\ListCommands.cs" />
+    <Compile Include="Modules\Ping.cs" />
+    <Compile Include="Modules\ProgrammingHelp.cs" />
+    <Compile Include="Modules\TellAJoke.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
