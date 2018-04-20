@@ -12,9 +12,17 @@ namespace CorgiBot.Modules
         [Command("help!")]
         public async Task ProgrammingHelpAsync([Remainder] string query)
         {
+            List<string> pingResponses = new List<string>();
+            pingResponses.Add("**Arf!**");    //0
+            pingResponses.Add("**Woof!**");   //1
+            pingResponses.Add("**Bork!**");   //2
+
+            Random rnd = new Random();
+            int index = rnd.Next(0, pingResponses.Count);
+
             await ReplyAsync("Hmm, Let me see...");
             query = query.Replace(" ", "+");
-            await ReplyAsync("**Arf!** Maybe this will help: https://stackoverflow.com/search?q=" + query);
+            await ReplyAsync(pingResponses[index] + " Maybe this will help: https://stackoverflow.com/search?q=" + query);
         }
     }
 }

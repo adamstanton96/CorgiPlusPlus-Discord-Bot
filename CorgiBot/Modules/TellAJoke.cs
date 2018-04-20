@@ -19,16 +19,22 @@ namespace CorgiBot.Modules
         [Command("tell me a joke!")]
         public async Task TellAJokeAsync()
         {
-            List<Joke> jokeBook = new List<Joke>();
-            jokeBook.Add(new Joke("How many programmers does it take to screw in a light bulb?", "None. It's a hardware problem! **Arf!**"));   //0
-            jokeBook.Add(new Joke("There are 10 kinds of people in this world...", "Those who understand Binary and those who don't! **Arf!**"));   //1
-            jokeBook.Add(new Joke("Why do Java developers wear glasses?", "Because they can't C too well! **Arf!**"));   //2
-         
-            Random rnd = new Random();
-            int index = rnd.Next(0, jokeBook.Count);
+            List<string> pingResponses = new List<string>();
+            pingResponses.Add("**Arf!**");    //0
+            pingResponses.Add("**Woof!**");   //1
+            pingResponses.Add("**Bork!**");   //2
 
-            await ReplyAsync(jokeBook[index].setup);
-            await ReplyAsync(jokeBook[index].punchline);
+            List<Joke> jokeBook = new List<Joke>();
+            jokeBook.Add(new Joke("How many programmers does it take to screw in a light bulb?", "None. It's a hardware problem! "));   //0
+            jokeBook.Add(new Joke("There are 10 kinds of people in this world...", "Those who understand Binary and those who don't! "));   //1
+            jokeBook.Add(new Joke("Why do Java developers wear glasses?", "Because they can't C too well! "));   //2
+
+            Random rnd = new Random();
+            int index = rnd.Next(0, pingResponses.Count);
+            int jokeIndex = rnd.Next(0, jokeBook.Count);
+
+            await ReplyAsync(jokeBook[jokeIndex].setup);
+            await ReplyAsync(jokeBook[jokeIndex].punchline + pingResponses[index]);
         }
     }
 }

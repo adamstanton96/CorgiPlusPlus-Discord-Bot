@@ -21,7 +21,15 @@ namespace CorgiBot.Modules
             embedBuilder.AddField("Tell Me A Joke!", "Corgibot tells you a programming joke.");
             embedBuilder.AddField("Help! <query>", "Corgibot attempts to solve your programming query.");
 
-            await ReplyAsync("**Arf!** Here's a list of Corgibot commands! To call a command just say 'Corgibot!' followed by the command!");
+            List<string> pingResponses = new List<string>();
+            pingResponses.Add("**Arf!**");    //0
+            pingResponses.Add("**Woof!**");   //1
+            pingResponses.Add("**Bork!**");   //2
+
+            Random rnd = new Random();
+            int index = rnd.Next(0, pingResponses.Count);
+
+            await ReplyAsync(pingResponses[index] + " Here's a list of Corgibot commands! To call a command just say 'Corgibot!' followed by the command!");
             await ReplyAsync("", false, embedBuilder.Build());
         }
     }
