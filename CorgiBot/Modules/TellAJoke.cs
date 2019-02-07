@@ -14,6 +14,7 @@ namespace CorgiBot.Modules
         public string punchline;
     }
 
+    //Tells a joke from a predefined list of programming jokes... EDIT: They're bad jokes and I should feel bad...
     public class TellAJoke : ModuleBase<SocketCommandContext>
     {
         [Command("tell me a joke!")]

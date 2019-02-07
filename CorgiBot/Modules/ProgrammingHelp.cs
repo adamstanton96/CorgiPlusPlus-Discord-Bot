@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CorgiBot.Modules
 {
+    //Returns a link to search results on stack overflow regarding the query...
     public class ProgrammingHelp : ModuleBase<SocketCommandContext>
     {
         [Command("help!")]

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace CorgiBot.Modules
 {
+    //Provides the user with a list of available commands...
     public class ListCommands : ModuleBase<SocketCommandContext>
     {
         [Command("list commands!")]

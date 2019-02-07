@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace CorgiBot.Modules
 {
+    //Bot will send a short message introducing itself...
     public class IntroduceYourself : ModuleBase<SocketCommandContext>
     {
         [Command("introduce yourself!")]

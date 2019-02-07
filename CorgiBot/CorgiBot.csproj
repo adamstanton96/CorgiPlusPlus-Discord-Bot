@@ -132,6 +132,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modules\CheerMeUp.cs" />
     <Compile Include="Modules\IntroduceYourself.cs" />
     <Compile Include="Modules\ListCommands.cs" />
     <Compile Include="Modules\Ping.cs" />
@@ -143,6 +144,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Media\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -15,22 +15,20 @@ namespace CorgiBot
     class Program
     {
         static void Main(string[] args) => new Program().RunBotAsync().GetAwaiter().GetResult(); //Mimics async functionality within static method.
-
+    
         private DiscordSocketClient client;
         private CommandService commands;
         private IServiceProvider services;
 
         public async Task RunBotAsync()
-        { 
-            client = new DiscordSocketClient();
-            commands = new CommandService();
-            services = new ServiceCollection()
-                .AddSingleton(client)
-                .AddSingleton(commands)
-                .BuildServiceProvider();
-
+        {
+            //This bot is simply a test, therefore no precautions have been taken to hide the security token.
             string botToken = "NDM2Mjc4MzQzODE4NTQzMTE1.DbnYgA.IKRbLRnCHRPJi7Q-IwOy0k0XNJo";
 
+            client = new DiscordSocketClient();
+            commands = new CommandService();
+            services = new ServiceCollection().AddSingleton(client).AddSingleton(commands).BuildServiceProvider();
+            
             //Event subscription:
             client.Log += Log;
 
